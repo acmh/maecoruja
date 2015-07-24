@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multiparty Chatroom</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+         <link rel="stylesheet" type="text/css" href="/easyrtc/easyrtc.css" />
+
+        <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+        <script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/demo_room.css" />
+        <script type="text/javascript" src="js/demo_multiparty.js"></script>
+		
+		<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/ui-darkness/jquery-ui.min.css" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    </head>
+
+    <body onload="appInit()" >
+		<div class="pageHeader">
+				<div class="row">
+					<div class="col-md-7">
+						<h1>Bootply
+							<p class="lead">The easiest way to apply Bootstrap</p>
+						</h1>
+					</div>
+				</div>
+			</div>
+		
+		<div id="container">
+			
+			<div id="fullpage"  class="boxCommon">
+				<video id="box0" class="transit boxCommon" muted="muted" volume="0" ></video>
+				<video id="box1" class="transit boxCommon" style="visibility:hidden"></video>
+				<video id="box2" class="transit boxCommon" style="visibility:hidden"></video>
+				<video id="box3" class="transit boxCommon" style="visibility:hidden"></video>
+				<div id="textentryBox" onsubmit="sendText()" style="display:none" >
+					<input type="text" id="textentryField"  class="transit boxcommon" /><br>
+					<button id="textentrySubmit" style="float:right;margin-right:1em" onclick="sendText()">Send</button>
+					<button id="textentryCancel" style="float:left;margin-left:1em" onclick="cancelText()">Cancel</button>
+				</div>
+
+				<img id="killButton" class="transit boxCommon" onclick="killActiveBox()" src="images/button_close.png" style="display:none;z-index:3" alt="close button" />
+				<img id="muteButton" class="transit boxCommon" onclick ="muteActiveBox()" src="images/button_mute.png" style="display:none;z-index:3" alt="mute button" />
+				<img id="textEntryButton" class="transit boxCommon" onclick ="showTextEntry()" src="images/textEntry.png" style="z-index:3;display:none" alt="text button" />
+			</div>
+		</div>
+		
+		<div class="panel">
+			<div class="top-grids text-center">
+			<div class="container">
+				<div class="col-md-3">
+					<div class="top-grid">
+						<span class="t-icon1"> </span>
+						<h3>Calendário de Vacinas</h3>
+						<p>Datas de vacinas importantes, não deixe seu filho de fora dessa!</p>
+						<input type="button" id="button" class="btn btn-primary" value="Abra o calendário" style="margin-top:5px; margin-bottom:5px;" data-toggle="modal" data-target="#myModal">
+						<!-- Modal -->
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+							<div class="modal-content">
+							  <div class="modal-header">
+								
+								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+							  </div>
+							  <div class="modal-body">
+								COLOCAR CALENDARIO AQUI
+							  </div>
+							  <div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Save changes</button>
+							  </div>
+							</div>
+						  </div>
+						</div>
+						 
+					</div>
+					
+
+				</div>
+				<div class="col-md-3">
+					<div class="top-grid">
+						<span class="t-icon2"> </span>
+						<h3>Exames</h3>
+						<p>Obtenha aqui informações sobre exames de rotina para você e toda a sua família</p>
+						
+						<input type="button" id="button" class="btn btn-primary" value="Verifique Exames" style="margin-top:5px; margin-bottom:5px;" data-toggle="modal" data-target="#myModal1">
+						<!-- Modal -->
+						<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+							<div class="modal-content">
+							  <div class="modal-header">
+								
+								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+							  </div>
+							  <div class="modal-body">
+								COLOCAR CALENDARIO AQUI
+							  </div>
+							  <div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Save changes</button>
+							  </div>
+							</div>
+						  </div>
+						</div>
+						
+						
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="top-grid">
+						<span class="t-icon3"> </span>
+						<h3>Números de hospitais</h3>
+						 <p>Endereço e contato dos principais hospitais do Recife</p>
+						 
+						<input type="button" id="button" class="btn btn-primary" value="Número para hospitais" style="margin-top:5px; margin-bottom:5px;" data-toggle="modal" data-target="#myModal2">
+						<!-- Modal -->
+						<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+							<div class="modal-content">
+							  <div class="modal-header">
+								
+								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+							  </div>
+							  <div class="modal-body">
+								COLOCAR CALENDARIO AQUI
+							  </div>
+							  <div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Save changes</button>
+							  </div>
+							</div>
+						  </div>
+						</div>
+						 
+						 
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="top-grid">
+						<span class="t-icon4"> </span>
+						<h3>Emergência</h3>
+						 <p>Veja alguns números importantes ajudam você a cuidar da sua família</p>
+						 
+						 <input type="button" id="button" class="btn btn-primary" value="Verifique Exames" style="margin-top:5px; margin-bottom:5px;" data-toggle="modal" data-target="#myModal3">
+						<!-- Modal -->
+						<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+							<div class="modal-content">
+							  <div class="modal-header">
+								
+								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+							  </div>
+							  <div class="modal-body">
+								HUEEE
+							  </div>
+							  <div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Save changes</button>
+							  </div>
+							</div>
+						  </div>
+						</div>
+						 
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			
+		</div>
+		</div>
+		
+		<footer>
+        <div class="container text-center">
+            <p>Copyright © LM Website 2015</p>
+        </div>
+		</footer>
+		
+    </body>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+</html>
