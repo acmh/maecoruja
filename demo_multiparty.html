@@ -5,7 +5,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
          <link rel="stylesheet" type="text/css" href="/easyrtc/easyrtc.css" />
 
-        <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
         <script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
         <script src="/socket.io/socket.io.js"></script>
         <link rel="stylesheet" type="text/css" href="css/demo_room.css" />
@@ -20,8 +19,8 @@
 		<div class="pageHeader">
 				<div class="row">
 					<div class="col-md-7">
-						<h1>Bootply
-							<p class="lead">The easiest way to apply Bootstrap</p>
+						<h1>Papo de Mãe
+							<p class="lead">A sua saúde e da sua família em primeiro lugar!</p>
 						</h1>
 					</div>
 				</div>
@@ -30,10 +29,12 @@
 		<div id="container">
 			
 			<div id="fullpage"  class="boxCommon">
-				<video id="box0" class="transit boxCommon" muted="muted" volume="0" ></video>
-				<video id="box1" class="transit boxCommon" style="visibility:hidden"></video>
-				<video id="box2" class="transit boxCommon" style="visibility:hidden"></video>
-				<video id="box3" class="transit boxCommon" style="visibility:hidden"></video>
+				<div class="videoctn"><video id="box0" class="transit boxCommon" style="height: 350px" muted="muted" volume="0" ></video></div>
+				<div class="videoctn"><video id="box1" class="transit boxCommon" style="visibility:hidden;height: 350px"></video></div>
+				<div class="videoctn"><video id="box2" class="transit boxCommon" style="visibility:hidden;height: 350px"></video></div>
+				<div class="videoctn"><video id="box3" class="transit boxCommon" style="visibility:hidden;height: 350px"></video></div>
+				<div class="videoctn"><video id="box4" class="transit boxCommon" style="visibility:hidden;height: 350px"></video></div>
+				<div class="videoctn"><video id="box5" class="transit boxCommon" style="visibility:hidden;height: 350px"></video></div>
 				<div id="textentryBox" onsubmit="sendText()" style="display:none" >
 					<input type="text" id="textentryField"  class="transit boxcommon" /><br>
 					<button id="textentrySubmit" style="float:right;margin-right:1em" onclick="sendText()">Send</button>
@@ -61,14 +62,91 @@
 							<div class="modal-content">
 							  <div class="modal-header">
 								
-								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+								<h4 class="modal-title" id="myModalLabel">Calendário de Vacinas</h4>
 							  </div>
 							  <div class="modal-body">
-								COLOCAR CALENDARIO AQUI
+								
+								<table class="cal">
+										  <caption>
+											January 2012
+										  </caption>
+										  <thead>
+											<tr>
+											  <th>Mon</th>
+											  <th>Tue</th>
+											  <th>Wed</th>
+											  <th>Thu</th>
+											  <th>Fri</th>
+											  <th>Sat</th>
+											  <th>Sun</th>
+											</tr>
+										  </thead>
+										  <tbody>
+											<tr>
+											  <td class="off"><a href="index.html">26</a></td>
+											  <td class="off"><a href="index.html">27</a></td>
+											  <td class="off"><a href="index.html">28</a></td>
+											  <td class="off"><a href="index.html">29</a></td>
+											  <td class="off"><a href="index.html">30</a></td>
+											  <td class="off"><a href="index.html">31</a></td>
+											  <td><a href="index.html">1</a></td>
+											</tr>
+											<tr>
+											  <td><a href="index.html">2</a></td>
+											  <td><a href="index.html">3</a></td>
+											  <td><a href="index.html">4</a></td>
+											  <td><a href="index.html">5</a></td>
+											  <td><a href="index.html">6</a></td>
+											  <td><a href="index.html">7</a></td>
+											  <td><a href="index.html">8</a></td>
+											</tr>
+											<tr>
+											  <td><a href="index.html">9</a></td>
+											  <td><a href="index.html">10</a></td>
+											  <td><a href="index.html">11</a></td>
+											  <td><a href="index.html">12</a></td>
+											  <td><a href="index.html">13</a></td>
+											  <td><a href="index.html">14</a></td>
+											  <td><a href="index.html">15</a></td>
+											</tr>
+											<tr>
+											  <td><a href="index.html">16</a></td>
+											  <td><a href="index.html">17</a></td>
+											  <td><a href="index.html">18</a></td>
+											  <td><a href="index.html">19</a></td>
+											  <td><a href="index.html">20</a></td>
+											  <td><a href="index.html">21</a></td>
+											  <td><a href="index.html">22</a></td>
+											</tr>
+											<tr>
+											  <td><a href="index.html">23</a></td>
+											  <td><a href="index.html">24</a></td>
+											  <td><a href="index.html">25</a></td>
+											  <td><a href="index.html">26</a></td>
+											  <td><a href="index.html">27</a></td>
+											  <td class="active"><a href="index.html">28</a></td>
+											  <td><a href="index.html">29</a></td>
+											</tr>
+											<tr>
+											  <td><a href="index.html">30</a></td>
+											  <td><a href="index.html">31</a></td>
+											  <td class="off"><a href="index.html">1</a></td>
+											  <td class="off"><a href="index.html">2</a></td>
+											  <td class="off"><a href="index.html">3</a></td>
+											  <td class="off"><a href="index.html">4</a></td>
+											  <td class="off"><a href="index.html">5</a></td>
+											</tr>
+										  </tbody>
+										</table>
+								
+										<div class="texto">
+											<h2>Datas das vacinas</h2>
+										</div>
+							  
 							  </div>
 							  <div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary">Save changes</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+								<button type="button" class="btn btn-primary">Lembrar data</button>
 							  </div>
 							</div>
 						  </div>
@@ -91,14 +169,60 @@
 							<div class="modal-content">
 							  <div class="modal-header">
 								
-								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+								<h4 class="modal-title" id="myModalLabel">Exames</h4>
 							  </div>
 							  <div class="modal-body">
-								COLOCAR CALENDARIO AQUI
+								<div class="panel-group" id="accordion">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Teste do Pézinho</a>
+											</h4>
+										</div>
+										<div id="collapseOne" class="panel-collapse collapse in">
+											<div class="panel-body">
+												O Teste do Pezinho é um exame rápido de prevenção que coleta gotinhas de sangue do calcanhar do bebê com a finalidade de impedir o desenvolvimento de doenças que, se não tratadas, podem levar à Deficiência Intelectual e causar outros prejuízos à qualidade de vida das pessoas. 	
+Para que a prevenção seja possível, a coleta deve ser efetuada na primeira semana de vida da criança e as amostras devem ser enviadas o quanto antes para o laboratório.
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Teste da orelhinha</a>
+											</h4>
+										</div>
+										<div id="collapseTwo" class="panel-collapse collapse">
+											<div class="panel-body">
+											<p>O que é: O objetivo principal é a identificação precoce da deficiência auditiva, já que ouvir bem é fundamental para o desenvolvimento da fala e da linguagem da criança.</p>
+											<p>Quando realizá-lo: Nos três primeiros meses de vida.	</p>
+											<p>como é feito: O exame demora entre três e cinco minutos e é realizado por um fonoaudiólogo, com um pequeno fone na parte externa da orelha.</p>
+											<p> Rede pública X particular: É obrigatório em todos os bebês nascidos em hospitais e maternidades do país.</p>
+											<p>Preço: Gratuito.</p>
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"> Hemograma Completo Com Contagem de plaquetas</a>
+											</h4>
+										</div>
+										<div id="collapseThree" class="panel-collapse collapse">
+											<div class="panel-body">
+												<p>O que é: Analisa as células presentes no sangue, tanto da série vermelha quanto da série branca, e visa a detectar anemia, baixa imunidade, infecções bacterianas ou viróticas, infestações parasitárias, alergia e leucemia, entre outras doenças. </p>
+												<p>Quando realizá-lo: Pelo menos uma vez por ano.	</p>
+												<p>Como é feito: Por meio de coleta de amostragens de sangue e análise laboratorial.</p>
+												<p> Rede pública X particular: É feito em ambas.</p>
+												<p>Preço: entre R$ 15 e R$ 60</p>
+											</div>
+										</div>
+									</div>
+								</div>
 							  </div>
 							  <div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary">Save changes</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+								<button type="button" class="btn btn-primary">Marcar Exames</button>
 							  </div>
 							</div>
 						  </div>
@@ -120,14 +244,35 @@
 							<div class="modal-content">
 							  <div class="modal-header">
 								
-								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+								<h4 class="modal-title" id="myModalLabel">Hospitais</h4>
 							  </div>
-							  <div class="modal-body">
-								COLOCAR CALENDARIO AQUI
+							  <div id="hue" class="modal-body">
+									<div class="list-group">
+									   <a href="#" class="list-group-item">
+										  <h4 class="list-group-item-heading">
+											Hospital Esperança
+										  </h4>
+										  <p class="list-group-item-text">
+											Rua Antônio Gomes de Freitas, 265 - Ilha do Leite Recife - PE, Brasil, +55 81 3131-7878
+										  </p>
+									   </a>
+									   <a href="#" class="list-group-item">
+										  <h4 class="list-group-item-heading">
+											IMIP
+										  </h4>
+										  <p class="list-group-item-text">
+											Rua dos Coelhos, 300 - Coelhos, Boa Vista, Recife - PE, 50070-550, Brasil
+										  </p>
+									   </a>
+									   <a href="#" class="list-group-item">
+										  <h4 class="list-group-item-heading">Hospital Infantil Maria Lucinda</h4>
+										  <p class="list-group-item-text">Av. Parnamirim, 95 - Paranamirim, Recife - PE, 52060-000, Brasil</p>
+									   </a>
+									</div>
 							  </div>
 							  <div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary">Save changes</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+								<button type="button" class="btn btn-primary">Entre em contato!</button>
 							  </div>
 							</div>
 						  </div>
@@ -142,21 +287,42 @@
 						<h3>Emergência</h3>
 						 <p>Veja alguns números importantes ajudam você a cuidar da sua família</p>
 						 
-						 <input type="button" id="button" class="btn btn-primary" value="Verifique Exames" style="margin-top:5px; margin-bottom:5px;" data-toggle="modal" data-target="#myModal3">
+						 <input type="button" id="button" class="btn btn-primary" value="Número de Emergência" style="margin-top:5px; margin-bottom:5px;" data-toggle="modal" data-target="#myModal3">
 						<!-- Modal -->
 						<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 						  <div class="modal-dialog" role="document">
 							<div class="modal-content">
 							  <div class="modal-header">
 								
-								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+								<h4 class="modal-title" id="myModalLabel">Emergência</h4>
 							  </div>
-							  <div class="modal-body">
-								HUEEE
+							  <div id="hue" class="modal-body">
+								<div class="list-group">
+									   <a href="#" class="list-group-item">
+										  <h4 class="list-group-item-heading">
+											SAMU
+										  </h4>
+										  <p class="list-group-item-text">
+											192
+										  </p>
+									   </a>
+									   <a href="#" class="list-group-item">
+										  <h4 class="list-group-item-heading">
+											Bombeiros
+										  </h4>
+										  <p class="list-group-item-text">
+											193
+										  </p>
+									   </a>
+									   <a href="#" class="list-group-item">
+										  <h4 class="list-group-item-heading">Nacc - Câncer Infantil, Doações, Voluntariado, Oncologia ...</h4>
+										  <p class="list-group-item-text">(81) 3267-9200</p>
+									   </a>
+									</div>
 							  </div>
 							  <div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary">Save changes</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+								
 							  </div>
 							</div>
 						  </div>
@@ -178,5 +344,5 @@
 		
     </body>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"></link>
 </html>

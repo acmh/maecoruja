@@ -15,6 +15,7 @@ function getIdOfBox(boxNum) {
 
 
 function reshapeFull(parentw, parenth) {
+	return;
     return {
         left:0,
         top:0,
@@ -24,6 +25,7 @@ function reshapeFull(parentw, parenth) {
 }
 
 function reshapeTextEntryBox(parentw, parenth) {
+	return;
     return {
         left:parentw/4,
         top:parenth/4,
@@ -33,6 +35,7 @@ function reshapeTextEntryBox(parentw, parenth) {
 }
 
 function reshapeTextEntryField(parentw, parenth) {
+	return;
     return {
         width:parentw -40
     }
@@ -41,6 +44,7 @@ function reshapeTextEntryField(parentw, parenth) {
 var margin = 20;
 
 function reshapeToFullSize(parentw, parenth) {
+	return;
     var left, top, width, height;
     var margin= 20;
 
@@ -68,6 +72,7 @@ function reshapeToFullSize(parentw, parenth) {
 // Similar for percentTop.
 //
 function setThumbSizeAspect(percentSize, percentLeft, percentTop, parentw, parenth, aspect) {
+	return;
 
     var width, height;
     if( parentw < parenth*aspectRatio){
@@ -104,10 +109,12 @@ function setThumbSizeAspect(percentSize, percentLeft, percentTop, parentw, paren
 
 
 function setThumbSize(percentSize, percentLeft, percentTop, parentw, parenth) {
+	return;
     return setThumbSizeAspect(percentSize, percentLeft, percentTop, parentw, parenth, aspectRatio);
 }
 
 function setThumbSizeButton(percentSize, percentLeft, percentTop, parentw, parenth, imagew, imageh) {
+	return;
     return setThumbSizeAspect(percentSize, percentLeft, percentTop, parentw, parenth, imagew/imageh);
 }
 
@@ -116,6 +123,7 @@ var sharedVideoWidth  = 1;
 var sharedVideoHeight = 1;
 
 function reshape1of2(parentw, parenth) {
+	return;
     if( layout== 'p' ) {
         return {
             left: (parentw-sharedVideoWidth)/2,
@@ -137,6 +145,7 @@ function reshape1of2(parentw, parenth) {
 
 
 function reshape2of2(parentw, parenth){
+	return;
     if( layout== 'p' ) {
         return {
             left: (parentw-sharedVideoWidth)/2,
@@ -156,6 +165,7 @@ function reshape2of2(parentw, parenth){
 }
 
 function reshape1of3(parentw, parenth) {
+	return;
     if( layout== 'p' ) {
         return {
             left: (parentw-sharedVideoWidth)/2,
@@ -175,6 +185,7 @@ function reshape1of3(parentw, parenth) {
 }
 
 function reshape2of3(parentw, parenth){
+	return;
     if( layout== 'p' ) {
         return {
             left: (parentw-sharedVideoWidth)/2,
@@ -194,6 +205,7 @@ function reshape2of3(parentw, parenth){
 }
 
 function reshape3of3(parentw, parenth) {
+	return;
     if( layout== 'p' ) {
         return {
             left: (parentw-sharedVideoWidth)/2,
@@ -214,6 +226,7 @@ function reshape3of3(parentw, parenth) {
 
 
 function reshape1of4(parentw, parenth) {
+	return;
     return {
         left: (parentw - sharedVideoWidth*2)/3,
         top: (parenth - sharedVideoHeight*2)/3,
@@ -223,6 +236,7 @@ function reshape1of4(parentw, parenth) {
 }
 
 function reshape2of4(parentw, parenth) {
+	return;
     return {
         left: (parentw - sharedVideoWidth*2)/3*2+ sharedVideoWidth,
         top: (parenth - sharedVideoHeight*2)/3,
@@ -231,6 +245,7 @@ function reshape2of4(parentw, parenth) {
     }
 }
 function reshape3of4(parentw, parenth) {
+	return;
     return {
         left: (parentw - sharedVideoWidth*2)/3,
         top: (parenth - sharedVideoHeight*2)/3*2 + sharedVideoHeight,
@@ -240,6 +255,7 @@ function reshape3of4(parentw, parenth) {
 }
 
 function reshape4of4(parentw, parenth) {
+	return;
     return {
         left: (parentw - sharedVideoWidth*2)/3*2 + sharedVideoWidth,
         top: (parenth - sharedVideoHeight*2)/3*2 + sharedVideoHeight,
@@ -253,6 +269,7 @@ var connectCount = 0;
 
 
 function setSharedVideoSize(parentw, parenth) {
+	return;
     layout = ((parentw /aspectRatio) < parenth)?'p':'l';
     var w, h;
 
@@ -291,6 +308,7 @@ function setSharedVideoSize(parentw, parenth) {
 
 var reshapeThumbs = [
     function(parentw, parenth) {
+	return;
 
         if( activeBox > 0 ) {
             return setThumbSize(0.20, 0.01, 0.01, parentw, parenth);
@@ -306,6 +324,7 @@ var reshapeThumbs = [
         }
     },
     function(parentw, parenth) {
+	return;
         if( activeBox >= 0 || !boxUsed[1]) {
             return setThumbSize(0.20, 0.01, -0.01, parentw, parenth);
         }
@@ -321,6 +340,7 @@ var reshapeThumbs = [
         }
     },
     function(parentw, parenth) {
+	return;
         if( activeBox >= 0 || !boxUsed[2] ) {
             return setThumbSize(0.20, -0.01, 0.01, parentw, parenth);
         }
@@ -341,6 +361,7 @@ var reshapeThumbs = [
         }
     },
     function(parentw, parenth) {
+	return;
         if( activeBox >= 0 || !boxUsed[3]) {
             return setThumbSize(0.20, -0.01, -0.01, parentw, parenth);
         }
@@ -359,6 +380,7 @@ var reshapeThumbs = [
 
 
 function killButtonReshaper(parentw, parenth) {
+	return;
     var imagew = 128;
     var imageh = 128;
     if( parentw < parenth) {
@@ -371,6 +393,7 @@ function killButtonReshaper(parentw, parenth) {
 
 
 function muteButtonReshaper(parentw, parenth) {
+	return;
     var imagew = 32;
     var imageh = 32;
     if( parentw < parenth) {
@@ -382,6 +405,7 @@ function muteButtonReshaper(parentw, parenth) {
 }
 
 function reshapeTextEntryButton(parentw, parenth) {
+	return;
     var imagew = 32;
     var imageh = 32;
     if( parentw < parenth) {
@@ -394,9 +418,10 @@ function reshapeTextEntryButton(parentw, parenth) {
 
 
 function handleWindowResize() {
+	return;
     var fullpage = document.getElementById('fullpage');
-    fullpage.style.width = window.innerWidth + "px";
-    fullpage.style.height = window.innerHeight + "px";
+    //fullpage.style.width = window.innerWidth + "px";
+    //fullpage.style.height = window.innerHeight + "px";
     connectCount = easyrtc.getConnectionCount();
 
     function applyReshape(obj,  parentw, parenth) {
@@ -429,6 +454,7 @@ function handleWindowResize() {
 
 
 function setReshaper(elementId, reshapeFn) {
+	return;
     var element = document.getElementById(elementId);
     if( !element) {
         alert("Attempt to apply to reshapeFn to non-existent element " + elementId);
@@ -441,6 +467,7 @@ function setReshaper(elementId, reshapeFn) {
 
 
 function collapseToThumbHelper() {
+	return;
     if( activeBox >= 0) {
         var id = getIdOfBox(activeBox);
         document.getElementById(id).style.zIndex = 2;
@@ -452,6 +479,7 @@ function collapseToThumbHelper() {
 }
 
 function collapseToThumb() {
+	return;
     collapseToThumbHelper();
     activeBox = -1;
     updateMuteImage(false);
@@ -460,6 +488,7 @@ function collapseToThumb() {
 }
 
 function updateMuteImage(toggle) {
+	return;
     var muteButton = document.getElementById('muteButton');
     if( activeBox > 0) { // no kill button for self video
         muteButton.style.display = "block";
@@ -478,6 +507,7 @@ function updateMuteImage(toggle) {
 
 
 function expandThumb(whichBox) {
+	return;
     var lastActiveBox = activeBox;
     if( activeBox >= 0 ) {
         collapseToThumbHelper();
@@ -498,6 +528,7 @@ function expandThumb(whichBox) {
 }
 
 function prepVideoBox(whichBox) {
+	return;
     var id = getIdOfBox(whichBox);
     setReshaper(id, reshapeThumbs[whichBox]);
     document.getElementById(id).onclick = function() {
@@ -518,6 +549,7 @@ function killActiveBox() {
 
 
 function muteActiveBox() {
+	return;
     updateMuteImage(true);
 }
 
@@ -571,6 +603,7 @@ function cancelText() {
 
 
 function sendText(e) {
+	return;
     document.getElementById('textentryBox').style.display = "none";
     document.getElementById('textEntryButton').style.display = "block";
     var stringToSend = document.getElementById('textentryField').value;
@@ -587,6 +620,7 @@ function sendText(e) {
 
 
 function showTextEntry() {
+	return;
     document.getElementById('textentryField').value = "";
     document.getElementById('textentryBox').style.display = "block";
     document.getElementById('textEntryButton').style.display = "none";
@@ -595,6 +629,7 @@ function showTextEntry() {
 
 
 function showMessage(startX, startY, content) {
+	return;
     var fullPage = document.getElementById('fullpage');
     var fullW = parseInt(fullPage.offsetWidth);
     var fullH = parseInt(fullPage.offsetHeight);
@@ -670,6 +705,7 @@ function messageListener(easyrtcid, msgType, content) {
 }
 
 
+var videos = [];
 function appInit() {
 
     // Prep for the top-down layout manager
@@ -689,7 +725,7 @@ function appInit() {
 
 
     easyrtc.setRoomOccupantListener(callEverybodyElse);
-    easyrtc.easyApp("easyrtc.multiparty", "box0", ["box1", "box2", "box3"], loginSuccess);
+    easyrtc.easyApp("easyrtc.multiparty", "box0", ["box1", "box2", "box3", "box4", "box5"], loginSuccess);
     easyrtc.setPeerListener(messageListener);
     easyrtc.setDisconnectListener( function() {
         easyrtc.showError("LOST-CONNECTION", "Lost connection to signaling server");
@@ -723,5 +759,7 @@ function appInit() {
         },20);
     });
 }
+
+
 
 
